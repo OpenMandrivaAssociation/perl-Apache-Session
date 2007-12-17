@@ -23,7 +23,6 @@ BuildRequires:  perl(Digest::MD5)
 BuildRequires:  perl(Test::Deep)
 BuildRequires:  perl(Test::Exception)
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 Apache::Session is a persistence framework which is particularly useful
