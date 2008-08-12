@@ -1,8 +1,8 @@
 %define module	Apache-Session
 %define name	perl-%{module}
 %define epoch	2
-%define version	1.86
-%define release	%mkrel 3
+%define version	1.87
+%define release	%mkrel 1
 
 Name:		%{name}
 Epoch:		%{epoch}
