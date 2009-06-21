@@ -1,21 +1,16 @@
-%define module	Apache-Session
-%define name	perl-%{module}
+%define upstream_name	Apache-Session
+%define upstream_version	1.88
 %define epoch	2
-%define version	1.87
-%define release	%mkrel 1
 
-Name:		%{name}
-Epoch:		%{epoch}
-Version:	%{version}
-Release:	%{release}
+Name:		perl-%{upstream_name}
+Epoch:		2
+Version:	%perl_convert_version %{upstream_version}
+Release:	%mkrel 1
 Summary:	A persistence framework for session data
 License:	GPL or Artistic
 Group:		Development/Perl
-URL:		http://search.cpan.org/dist/%{module}/
-Source:		http://www.cpan.org/modules/by-module/Apache/%{module}-%{version}.tar.bz2
-%if %{mdkversion} < 1010
-BuildRequires:	perl-devel
-%endif
+URL:		http://search.cpan.org/dist/%{upstream_name}/
+Source:		http://www.cpan.org/modules/by-module/Apache/%{upstream_name}-%{upstream_version}.zip
 Requires:	perl(Digest::MD5)
 BuildRequires:	perl(DB_File)
 BuildRequires:  perl(DBI)
@@ -33,7 +28,7 @@ and other web servers, and it also works outside of a web server alto-
 gether.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
