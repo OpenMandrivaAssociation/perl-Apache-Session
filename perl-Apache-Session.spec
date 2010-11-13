@@ -1,25 +1,25 @@
 %define upstream_name	 Apache-Session
-%define upstream_version 1.88
+%define upstream_version 1.89
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	%mkrel 2
+Release:	%mkrel 1
 Epoch:		2
 
 Summary:	A persistence framework for session data
 License:	GPL+ or Artistic
 Group:		Development/Perl
 URL:		http://search.cpan.org/dist/%{upstream_name}/
-Source0:	http://www.cpan.org/modules/by-module/Apache/%{upstream_name}-%{upstream_version}.zip
+Source0:    http://www.cpan.org/modules/by-module/Apache/%{upstream_name}-%{upstream_version}.tar.gz
 
 BuildRequires:	perl(DB_File)
 BuildRequires:  perl(DBI)
 BuildRequires:  perl(Digest::MD5)
 BuildRequires:  perl(Test::Deep)
 BuildRequires:  perl(Test::Exception)
+
 BuildArch:	noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
-Requires:	perl(Digest::MD5)
 
 %description
 Apache::Session is a persistence framework which is particularly useful
@@ -36,7 +36,7 @@ gether.
 %make
 
 %check
-%{__make} test
+%make test
 
 %clean 
 rm -rf %{buildroot}
@@ -47,6 +47,6 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
-%doc INSTALL README
+%doc INSTALL README META.yml
 %{perl_vendorlib}/Apache
 %{_mandir}/*/*
