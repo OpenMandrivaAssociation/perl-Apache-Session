@@ -1,2 +1,4 @@
+removed_sources:
+  Apache-Session-1.89.tar.gz: 034adb90d17d6df3acd5f284dbc8e546df4e3061
 sources:
-  "Apache-Session-1.89.tar.gz": 034adb90d17d6df3acd5f284dbc8e546df4e3061
+  Apache-Session-1.90.tar.gz: c56e0420dcd085eefb5b5fc8521fdeba03eb4df5
