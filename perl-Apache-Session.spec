@@ -1,7 +1,7 @@
 %define upstream_name	 Apache-Session
-%define upstream_version 1.90
+%define upstream_version 1.91
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version 1.90
+Version:	%perl_convert_version %{upstream_version}
 Release:	1
 Epoch:		2
 
@@ -9,7 +9,7 @@ Summary:	A persistence framework for session data
 License:	GPL+ or Artistic
 Group:		Development/Perl
 URL:		http://search.cpan.org/dist/%{upstream_name}/
-Source0:    http://www.cpan.org/modules/by-module/Apache/Apache-Session-1.90.tar.gz
+Source0:    http://www.cpan.org/modules/by-module/Apache/Apache-Session-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
 BuildRequires:	perl(DB_File)
@@ -129,5 +129,6 @@ perl Makefile.PL INSTALLDIRS=vendor
 * Thu May 20 2004 Rafael Garcia-Suarez <rgarciasuarez@mandrakesoft.com> 1.6-1mdk
 - new version
 - set epoch = 2 (if not, 1.54 > 1.6)
+
 
 
