@@ -1,8 +1,7 @@
 %define upstream_name	 Apache-Session
-%define upstream_version 1.94
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	1
+Version:	1.94
+Release:	2
 Epoch:		2
 
 Summary:	A persistence framework for session data
@@ -10,7 +9,7 @@ Summary:	A persistence framework for session data
 License:	GPL+ or Artistic
 Group:		Development/Perl
 URL:		https://github.com/chorny/Apache-Session
-Source0:    https://cpan.metacpan.org/authors/id/C/CH/CHORNY/Apache-Session-%{upstream_version}.tar.gz
+Source0:    https://cpan.metacpan.org/authors/id/C/CH/CHORNY/Apache-Session-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -30,7 +29,7 @@ and other web servers, and it also works outside of a web server alto-
 gether.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
